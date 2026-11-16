@@ -4,4 +4,6 @@ la adaptacion del uso de nvim como es debido.
 
 ## proyecto
 - La idea es un juego por turnos estilo rpg.
-
+-- Crear
+--- Interfaz de input.
+--- Ciclo del juego.

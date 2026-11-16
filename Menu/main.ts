@@ -19,8 +19,12 @@ export const frame = (text: string): string => {
   return resultText.join("");
 }
 export default async function actionMenu(options: string[]) {
-  options.forEach((element: string, index: number) => print(`[${index + 1}]: ${element}`));
+  options.forEach((element: string, index: number) => print(`> [${index + 1}]: ${element}`));
   print("que decision tomaras?:    ");
-  const op = await readLine();
+  let op;
+  do {
+    op = await readLine()
+    if (!options.includes(op)) print("esa opcion es invalida!, vuelve a intentarlo");
+  } while (!options.includes(op));
   return op;
 }

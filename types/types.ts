@@ -44,8 +44,11 @@ export abstract class Fighter implements Partial<Ente> {
   def?: number | undefined;
   abstract atacar(): void;
 }
-export abstract class Being implements Ente {
+export abstract class Being implements Partial<Ente>, Partial<Extras> {
   position: Position = new Position(0, 0, 0);
   name?: string | undefined = "NPC";
-  health?: number | undefined = 100;
+  health: number = 100;
+  lucky?: number | undefined = Math.random();
+
 }
+

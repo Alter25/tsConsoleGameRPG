@@ -18,8 +18,9 @@ export const frame = (text: string): string => {
   console.log(tempText.length);
   return resultText.join("");
 }
-export default async function actionMenu(options: string) {
-  print(options);
+export default async function actionMenu(options: string[]) {
+  options.forEach((element: string, index: number) => print(`[${index + 1}]: ${element}`));
+  print("que decision tomaras?:    ");
   const op = await readLine();
   return op;
 }

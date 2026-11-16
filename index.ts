@@ -4,8 +4,8 @@ import { frame } from "./Menu/main";
 //esto sera un bucle que cumpla ciertas condiciones para seguir.
 const historia = `Todo comienza Aqui. En la Taberna del gran pony.`;
 let action;
+frame(historia);
 do {
-  frame(historia);
-  action = await readLine()
+  action = await actionMenu(["nueva partida", "continuar partida", "ayuda", "salir"]);
 } while (action != "salir");
 print("Vuelve pronto!");

@@ -3,6 +3,7 @@ export const MAXCHAR = 32;
 export const MAPCHAR = "#";
 export const FRAMECHAR = "%";
 
+
 export enum MenuChoise {
   "Nueva partida" = 1,
   "Continuar partida",

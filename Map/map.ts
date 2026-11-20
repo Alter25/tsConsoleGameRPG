@@ -1,3 +1,4 @@
+import type { Drawable } from "../Characters/base";
 import { print } from "../inputs/IO";
 import { MAPCHAR, MAPSIZE } from "../gameConfigs/globalConfig";
 
@@ -10,7 +11,7 @@ const map: string[][] = [];
   }
 }())
 
-export default function drawMap() {
+export default function drawMap(elementos: Drawable) {
   for (let i = 0; i < MAPSIZE; i++) {
     print(map[i]!.join("  "));
   }

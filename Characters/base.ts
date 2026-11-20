@@ -11,7 +11,7 @@ interface Info {
   misions: string[];
   story: string;
 }
-interface Drawable {
+export interface Drawable {
   char: string;
   position: Position;
   selfDraw(mapa: string[][]): void;
@@ -29,12 +29,9 @@ export abstract class Entity implements Drawable {
   selfDraw(mapa: string[][]): void {
     //aqui ira el codigo de modificacion del mapa real y se colocara
     //el caracter correspondiente a la instancia.
-    for (let i = 0; i < MAPSIZE; i++) {
-      for (let j = 0; j < MAPSIZE; j++) {
-        if (this.position.x === i && this.position.y === j) {
-          mapa[i][j] = this.char ?? "U";
-        }
-      }
+    const fila = mapa[this.x];
+    if (fila && fila[this.y] === "#") {
+      fila[this.y] = this.char;
     }
   }
 }
